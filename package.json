@@ -1,0 +1,33 @@
+{
+  "name": "monorepo-starter",
+  "version": "1.0.0",
+  "description": "this is monorepo starter template",
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "packageManager": "pnpm@6.32.8",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistjs/monorepo-starter.git"
+  },
+  "keywords": [
+    "monorepo",
+    "tools-packages"
+  ],
+  "author": {
+    "name": "aibayanyu",
+    "email": "aibayanyu@qq.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mistjs/monorepo-starter/issues"
+  },
+  "homepage": "https://github.com/mistjs/monorepo-starter#readme",
+  "devDependencies": {
+    "@mistjs/eslint-config": "^0.0.2",
+    "@types/node": "^17.0.25",
+    "eslint": "^8.13.0",
+    "husky": "^7.0.4",
+    "typescript": "^4.6.3"
+  }
+}
