@@ -1,5 +1,5 @@
 module.exports = {
-    extends: [
-        "@mistjs"
-    ]
+  extends: [
+    '@mistjs',
+  ],
 }
