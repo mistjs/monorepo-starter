@@ -278,7 +278,7 @@ const main = async() => {
     args.push('--filter')
     args.push('./packages/**')
     const info = await execa('pnpm', ['publish', '--no-git-checks', ...args], { cwd: process.cwd() })
-    console.log(info.stdout)
+    console.log(info.stdout, info)
     console.log(chalk.green('publish success'))
   }
   catch (e: any) {
