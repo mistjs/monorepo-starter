@@ -311,5 +311,3 @@ const main = async() => {
 main().then(() => {
   // 成功
 })
-
-// checkPublishError()
