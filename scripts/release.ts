@@ -294,6 +294,18 @@ const main = async() => {
     console.log(e?.stderr || e.message)
     process.exit(1)
   }
+
+  // push
+  try {
+    console.log(chalk.magenta('push ...'))
+    await execa('git', ['push'])
+    console.log(chalk.green('push success'))
+  }
+  catch (e: any) {
+    console.log(chalk.red('push failed !'))
+    console.log(e?.stderr)
+    process.exit(1)
+  }
 }
 
 main().then(() => {
