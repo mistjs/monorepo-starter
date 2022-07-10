@@ -259,7 +259,6 @@ const main = async() => {
     console.log(chalk.magenta('commit ...'))
     await execa('git', ['add', '.'])
     const data = await execa('git', ['commit', '-m', commit || 'release: change version'])
-    console.log(data)
     console.log(chalk.green('commit success'))
   }
   catch (e: any) {
@@ -276,18 +275,18 @@ const main = async() => {
       args.push('--tag')
       args.push(releaseType)
     }
+    args.push('--access')
+    args.push('public')
     args.push('--filter')
     args.push('./packages/**')
     const info = await execa('pnpm', ['publish', '--no-git-checks', ...args], { cwd: process.cwd() })
     if (info.stderr)
       throw new Error(info.stderr)
-
     console.log(chalk.green('publish success'))
   }
   catch (e: any) {
-    // TODO
     console.log(chalk.red('publish failed !'))
-    console.log(e.message, e?.stderr)
+    console.log(e?.stderr || e.message)
     process.exit(1)
   }
 }
