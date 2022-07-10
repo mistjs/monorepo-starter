@@ -4,8 +4,7 @@
   "description": "this is monorepo starter template",
   "scripts": {
     "prepare": "husky install",
-    "release": "esno ./scripts/release.ts --tag",
-    "changelog": "conventional-changelog -i packages/app/CHANGELOG.md -k packages/app/package.json -s -r 0 -p angular --commit-path packages/app"
+    "release": "esno ./scripts/release.ts --tag"
   },
   "packageManager": "pnpm@7.5.0",
   "repository": {
