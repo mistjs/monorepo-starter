@@ -1,4 +1,4 @@
-## [1.0.6](https://github.com/mistjs/monorepo-starter/compare/0.0.9...1.0.6) (2022-07-10)
+## [1.0.7](https://github.com/mistjs/monorepo-starter/compare/0.0.9...1.0.7) (2022-07-10)
 
 
 ### Features
