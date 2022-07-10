@@ -140,7 +140,7 @@ const main = async() => {
   }
   catch (e: any) {
     console.log(chalk.red('test failed !'))
-    console.log(e?.stdout)
+    console.log(e?.stderr)
     process.exit(1)
   }
 
@@ -152,7 +152,7 @@ const main = async() => {
   }
   catch (e: any) {
     console.log(chalk.red('build failed !'))
-    console.log(e?.stdout)
+    console.log(e?.stderr)
     process.exit(1)
   }
 
@@ -198,7 +198,7 @@ const main = async() => {
       }
       catch (e: any) {
         console.log(chalk.red('add tag failed !'))
-        console.log(e?.stdout)
+        console.log(e?.stderr)
         process.exit(1)
       }
     }
@@ -227,7 +227,7 @@ const main = async() => {
     }
     catch (e: any) {
       console.log(chalk.red('add tag failed !'))
-      console.log(e?.stdout)
+      console.log(e?.stderr)
       process.exit(1)
     }
   }
@@ -251,7 +251,7 @@ const main = async() => {
   catch (e: any) {
     // TODO
     console.log(chalk.red('generate changelog failed !'))
-    console.log(e?.stdout)
+    console.log(e?.stderr)
     process.exit(1)
   }
   // commit
@@ -264,7 +264,7 @@ const main = async() => {
   }
   catch (e: any) {
     console.log(chalk.red('commit failed !'))
-    console.log(e?.stdout)
+    console.log(e?.stderr)
     process.exit(1)
   }
 
@@ -279,13 +279,15 @@ const main = async() => {
     args.push('--filter')
     args.push('./packages/**')
     const info = await execa('pnpm', ['publish', '--no-git-checks', ...args], { cwd: process.cwd() })
-    console.log(info.stdout, info)
+    if (info.stderr)
+      throw new Error(info.stderr)
+
     console.log(chalk.green('publish success'))
   }
   catch (e: any) {
     // TODO
     console.log(chalk.red('publish failed !'))
-    console.log(e?.stdout)
+    console.log(e.message, e?.stderr)
     process.exit(1)
   }
 }
