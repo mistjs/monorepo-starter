@@ -1,6 +1,6 @@
 {
   "name": "monorepo-starter-template",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "this is monorepo starter template",
   "scripts": {
     "prepare": "husky install",

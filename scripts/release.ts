@@ -18,6 +18,11 @@ interface Pkg {
   info?: VersionBumpResults
 }
 
+const checkPublishError = (str: string) => {
+  const pat = /npm ERR!/g
+  return pat.test(str)
+}
+
 const resolvePkgs = (pkgs: Project[]): Pkg[] => {
   return pkgs
     .filter(item => item.dir !== process.cwd())
@@ -275,12 +280,12 @@ const main = async() => {
       args.push('--tag')
       args.push(releaseType)
     }
-    // args.push('--access')
-    // args.push('public')
+    args.push('--access')
+    args.push('public')
     args.push('--filter')
     args.push('./packages/**')
     const info = await execa('pnpm', ['publish', '--no-git-checks', ...args], { cwd: process.cwd() })
-    if (info.stderr)
+    if (info.stderr && checkPublishError(info.stderr))
       throw new Error(info.stderr)
     console.log(chalk.green('publish success'))
   }
@@ -294,3 +299,5 @@ const main = async() => {
 main().then(() => {
   // 成功
 })
+
+// checkPublishError()
