@@ -1,4 +1,9 @@
-## 1.1.2-next.1 (2022-07-10)
+## 1.1.2 (2022-07-10)
+
+
+### Bug Fixes
+
+* change ([22a6c67](https://github.com/mistjs/monorepo-starter/commit/22a6c67584d2271f8049dd3ec8dec098ec5f5544))
 
 
 ### Features

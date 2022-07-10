@@ -1,11 +1,11 @@
 {
   "name": "monorepo-starter-template",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "this is monorepo starter template",
   "scripts": {
     "prepare": "husky install",
     "release": "esno ./scripts/release.ts --tag",
-    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0 -p angular"
+    "changelog": "conventional-changelog -i packages/app/CHANGELOG.md -k packages/app/package.json -s -r 0 -p angular --commit-path packages/app"
   },
   "packageManager": "pnpm@7.5.0",
   "repository": {

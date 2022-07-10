@@ -13,9 +13,21 @@ degit mistjs/monorepo-starter myApp
 
 ```
 
+
+## install
+
+```shell
+
+pnpm install
+
+```
+
+
+
+
 ## release
 
-You can release your package. You can use `pnpm release` and step into the command line.
+Release your package. use `pnpm release` and step into the command line.
 
 
 ```shell
