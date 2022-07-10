@@ -1,6 +1,7 @@
 import { resolve } from 'path'
 import * as process from 'process'
 import { promises as fs } from 'fs'
+import { execa } from 'execa'
 import type { Project } from 'find-packages'
 import findPkgs from 'find-packages'
 import prompt from 'prompts'
@@ -132,8 +133,11 @@ const main = async() => {
     console.log()
     process.exit(1)
   }
+  // use test
 
   // build dist
+  for (const selectPkg of selectPkgs)
+    await execa('pnpm', ['run', 'build'], { cwd: selectPkg.dir })
 
   // change version
   for (const selectPkg of selectPkgs) {

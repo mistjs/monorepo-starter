@@ -20,6 +20,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "unbuild": "^0.7.4"
+    "unbuild": "^0.7.4",
+    "vitest": "^0.18.0"
   }
 }
