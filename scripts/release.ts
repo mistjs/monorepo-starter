@@ -275,8 +275,8 @@ const main = async() => {
       args.push('--tag')
       args.push(releaseType)
     }
-    args.push('--access')
-    args.push('public')
+    // args.push('--access')
+    // args.push('public')
     args.push('--filter')
     args.push('./packages/**')
     const info = await execa('pnpm', ['publish', '--no-git-checks', ...args], { cwd: process.cwd() })
