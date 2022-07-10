@@ -7,6 +7,9 @@ monorepo starter template
 
 
 ```shell
+# use degit
+
+npm i -g degit
 
 degit mistjs/monorepo-starter myApp
 
