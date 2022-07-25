@@ -140,6 +140,7 @@ const main = async() => {
   // use test
   try {
     console.log(chalk.magenta('test ...'))
+    // multi test
     await Promise.all(selectPkgs.map(pkg => execa('pnpm', ['run', 'test'], { cwd: pkg.dir })))
     console.log(chalk.green('test success'))
   }
