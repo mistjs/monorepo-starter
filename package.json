@@ -1,30 +1,32 @@
 {
   "name": "monorepo-starter-template",
   "version": "0.0.10",
+  "packageManager": "pnpm@7.6.0",
   "description": "this is monorepo starter template",
-  "scripts": {
-    "prepare": "husky install",
-    "release": "esno ./scripts/release.ts --tag"
-  },
-  "packageManager": "pnpm@7.5.0",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mistjs/monorepo-starter.git"
-  },
   "keywords": [
     "monorepo",
     "monorepo-template"
   ],
+  "license": "MIT",
   "author": {
     "name": "aibayanyu",
     "email": "aibayanyu@qq.com"
   },
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mistjs/monorepo-starter.git"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "release": "esno ./scripts/release.ts --tag"
+  },
   "bugs": {
     "url": "https://github.com/mistjs/monorepo-starter/issues"
   },
   "homepage": "https://github.com/mistjs/monorepo-starter#readme",
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "@mistjs/eslint-config": "^0.0.2",
     "@mistjs/tsconfig": "^1.0.0",
     "@types/minimist": "^1.2.2",
@@ -38,8 +40,15 @@
     "execa": "^6.1.0",
     "find-packages": "^9.0.6",
     "husky": "^7.0.4",
+    "lint-staged": "^13.0.3",
     "minimist": "^1.2.6",
     "prompts": "^2.4.2",
     "typescript": "^4.7.4"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,vue}": "eslint . --fix"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

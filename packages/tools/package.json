@@ -2,12 +2,12 @@
   "name": "@yanyu28/tools",
   "version": "1.0.7",
   "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "author": "",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -15,14 +15,14 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "unbuild",
     "stub": "unbuild --stub",
     "test": "vitest run"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "unbuild": "^0.7.4",
     "vitest": "^0.18.0"

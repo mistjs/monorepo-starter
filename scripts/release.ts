@@ -263,7 +263,7 @@ const main = async() => {
   try {
     console.log(chalk.magenta('commit ...'))
     await execa('git', ['add', '.'])
-    const data = await execa('git', ['commit', '-m', commit || 'release: change version'])
+    await execa('git', ['commit', '-m', commit || 'release: change version'])
     console.log(chalk.green('commit success'))
   }
   catch (e: any) {
